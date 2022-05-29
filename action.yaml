@@ -38,7 +38,8 @@ runs:
     - id: test-output-generator
       run: echo "::set-output name=test-output::$(echo ${{ env.FOO }})"
       shell: bash
-    
+
+       
     - name: Echo output from previous step
-      run: echo ${{ steps.vars.outputs.test-output2 }}
+      run: echo ${{ steps.run-goodbye-script.outputs.test-output2 }}
       shell: bash
