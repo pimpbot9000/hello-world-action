@@ -27,6 +27,7 @@ runs:
     #      shell: bash
     - run: |
         FOO=$(${{ github.action_path }}/goodbye.sh)
+        echo $FOO
         echo "::set-env name=FOO::$FOO"
       shell: bash
 
