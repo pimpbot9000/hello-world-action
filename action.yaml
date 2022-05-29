@@ -26,11 +26,10 @@ runs:
     #    - run: echo "${{ github.action_path }}" >> $GITHUB_PATH
     #      shell: bash
     - run: |
-        FOO=$(${{ github.action_path }}/goodbye.sh)
-        echo $FOO
-        echo "::set-env name=FOO::$FOO"
+        export FOO_VALUE=$(${{ github.action_path }}/goodbye.sh)
+        echo "FOO=$FOO_VALUE" >> $GITHUB_ENV
       shell: bash
 
     - id: test-output-generator
-      run: echo "::set-output name=test-output::$(echo $FOO)"
+      run: echo "::set-output name=test-output::$(echo ${{ env.FOO }})"
       shell: bash
