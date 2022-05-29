@@ -12,6 +12,9 @@ outputs:
   test-output:
     description: "Test output"
     value: ${{ steps.test-output-generator.outputs.test-output}}
+  test-output2:
+    description: "Test output 2"
+    value: ${{ steps.run-goodbye-script.outputs.test-output2}}
 runs:
   using: "composite"
   steps:
@@ -25,9 +28,11 @@ runs:
     #      shell: bash
     #    - run: echo "${{ github.action_path }}" >> $GITHUB_PATH
     #      shell: bash
-    - run: |
-        export FOO_VALUE=$(${{ github.action_path }}/goodbye.sh)
+    - id: run-goodbye-script
+      run: |
+        FOO_VALUE=$(${{ github.action_path }}/goodbye.sh)
         echo "FOO=$FOO_VALUE" >> $GITHUB_ENV
+        echo "::set-output name=test-output2::$(echo $FOO_VALUE)"
       shell: bash
 
     - id: test-output-generator
