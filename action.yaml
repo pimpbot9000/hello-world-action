@@ -49,5 +49,5 @@ runs:
       shell: bash
       
     - name: Echo url
-      run: ${{ github.event.repository.html_url }}/tree/${{ github.event.ref }}
+      run: echo ${{ github.event.repository.html_url }}/tree/${{ github.event.ref }}
       shell: bash
