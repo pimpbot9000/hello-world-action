@@ -14,4 +14,4 @@ jobs:
         run: echo $MY_ENV
       - uses: actions/checkout@v2
       - name: Test action in this repo
-        uses: ./
+        uses: ./action.yaml
