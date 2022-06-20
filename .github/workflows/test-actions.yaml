@@ -14,4 +14,4 @@ jobs:
         run: echo $MY_ENV
       - uses: actions/checkout@v2
       - name: Test action in this repo
-        uses: ./action.yaml
+        uses: ./  # custom action must be named action.yaml. Give a path to action to invoke action.
