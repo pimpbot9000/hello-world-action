@@ -56,5 +56,5 @@ runs:
       run: echo $MY_ENV
       shell: bash
     
-    - run: echo github.ref
+    - run: echo ${{ github.ref }}
       shell: bash
