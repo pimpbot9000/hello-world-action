@@ -1,13 +1,17 @@
-name: Node Continuous Integration
+name: Test action
 
 on:
-  pull_request:
+  push:
     branches: [ main ]
   workflow_dispatch:
+env:
+  MY_ENV: Monday
 jobs:
-  job1:
+  job1:    
     runs-on: ubuntu-latest
     steps:
+      - name: Test env in parent action
+        run: echo $MY_ENV
       - uses: actions/checkout@v2
       - name: Test action in this repo
         uses: ./

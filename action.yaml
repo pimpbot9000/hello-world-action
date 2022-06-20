@@ -51,3 +51,7 @@ runs:
     - name: Echo url
       run: echo ${{ github.event.repository.html_url }}/tree/${{ github.event.ref }}
       shell: bash
+    
+    - name: Test env from parent action
+      run: echo $MY_ENV
+      shell: bash
