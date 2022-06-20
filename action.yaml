@@ -43,3 +43,11 @@ runs:
     - name: Echo output from previous step
       run: echo ${{ steps.run-goodbye-script.outputs.test-output2 }}
       shell: bash
+      
+    - name: Echo github variables
+      run: echo ${{ github.event.ref }} ${{ github.repository }} ${{ github.event.repository.html_url }}      
+      shell: bash
+      
+    - name: Echo url
+      run: echo ${{ github.event.repository.html_url }}/tree/${{ github.event.ref }}
+      shell: bash
