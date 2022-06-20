@@ -58,3 +58,6 @@ runs:
     
     - run: echo ${{ github.ref }}
       shell: bash
+    
+    - run: echo $github.ref
+      shell: bash
