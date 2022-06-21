@@ -1,5 +1,6 @@
 name: Test pull request action 3
 
+
 on:
   pull_request:
   workflow_dispatch:
@@ -10,4 +11,3 @@ jobs:
       - run: echo ${{ github.head_ref}}
       - run: echo $GITHUB_REF
       - run: echo $GITHUB_REF_NAME
-
