@@ -25,4 +25,8 @@ jobs:
       - uses: actions/checkout@v2
       - name: Test action in this repo
         uses: ./  # custom action must be named action.yaml. Give a path to action to invoke action.
+      - name: set global env
+        run: echo FOO="hello world" >> $GITHUB_ENV        
+      - name: get global env
+        run: echo $FOO
       
