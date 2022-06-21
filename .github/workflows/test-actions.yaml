@@ -16,10 +16,10 @@ jobs:
       - run: echo $GITHUB_REF
       - run: echo $GITHUB_REF_NAME
         
-      - name: printout GITHUB_ENV
+      - name: printout step specific env
         env:
           STEP_ENV: step env
-        run: echo $GITHUB_ENV
+        run: echo $STEP_ENV
       - name: Test env in parent action
         run: echo $MY_ENV
       - uses: actions/checkout@v2
