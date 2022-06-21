@@ -35,6 +35,10 @@ jobs:
     steps:
       - name: Does FOO exist?
         run: echo $FOO
+      - name: Access env vars
+        env:
+          TTT: tuomas
+        run: echo ${{ env.TTT}}
 
 
       
