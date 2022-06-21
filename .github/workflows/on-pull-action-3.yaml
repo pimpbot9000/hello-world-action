@@ -10,3 +10,4 @@ jobs:
       - run: echo ${{ github.head_ref}}
       - run: echo $GITHUB_REF
       - run: echo $GITHUB_REF_NAME
+
