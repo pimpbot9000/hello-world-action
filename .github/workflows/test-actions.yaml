@@ -31,7 +31,7 @@ jobs:
       - name: get global env
         run: echo $FOO
       - name: Custom action output
-        run: echo ${{ steps.test-action-in-this.repo.outputs.random-number}}
+        run: echo ${{ steps.test-action-in-this-repo.outputs.random-number}}
   job2:
     needs: [ job1 ]
     runs-on: ubuntu-latest
