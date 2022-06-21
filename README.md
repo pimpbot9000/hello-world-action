@@ -15,3 +15,6 @@ push new tag:
 Move tag to head:
 
 ```git tag -a v1 -f -m "First version modified" && git push origin :refs/tags/v1 && git push origin v1```
+
+History:
+Added pull requestion action and test it
