@@ -1,6 +1,4 @@
 name: Test pull request action 3
-
-
 on:
   pull_request:
   workflow_dispatch:
