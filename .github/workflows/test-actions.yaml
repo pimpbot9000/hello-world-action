@@ -12,6 +12,8 @@ jobs:
     steps:
       - name: Test github.head_ref
         run: echo ${{ github.head_ref}}
+      - run: echo $GITHUB_REF
+      - run: echo $GITHUB_REF_NAME
       - name: Test env in parent action
         run: echo $MY_ENV
       - uses: actions/checkout@v2
