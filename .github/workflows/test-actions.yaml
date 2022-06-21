@@ -29,4 +29,12 @@ jobs:
         run: echo FOO="hello world" >> $GITHUB_ENV        
       - name: get global env
         run: echo $FOO
+  job2:
+    needs: [ job1 ]
+    runs-on: ubuntu-latest
+    steps:
+      - name: Does FOO exist?
+        run: echo $FOO
+
+
       
