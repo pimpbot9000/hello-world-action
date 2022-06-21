@@ -1,0 +1,15 @@
+name: Test action
+
+on:
+  pull_request:
+    #branches: [ main ]
+  workflow_dispatch:
+
+jobs:
+  print-branch-name:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo ${{ github.head_ref}}
+      - run: echo ${github.head_ref}
+
+    
