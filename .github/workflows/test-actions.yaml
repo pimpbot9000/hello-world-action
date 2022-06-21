@@ -10,6 +10,8 @@ jobs:
   job1:    
     runs-on: ubuntu-latest
     steps:
+      - name: Test github.head_ref
+        run: echo ${{ github.head_ref}}
       - name: Test env in parent action
         run: echo $MY_ENV
       - uses: actions/checkout@v2
