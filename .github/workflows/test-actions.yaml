@@ -29,7 +29,14 @@ jobs:
       - name: set global env
         run: echo FOO="hello world" >> $GITHUB_ENV        
       - name: get global env
-        run: echo $FOO
+        run: echo $FOO      
+      - run: MY_ENV=tuesday
+      - run: |
+          echo $MY_ENV
+          BAR=bar
+      - run: echo MY_ENV=Friday >> $GITHUB_ENV
+      - run: echo $BAR
+      - run: echo $MY_ENV
       - name: Custom action output
         run: echo ${{ steps.test-action-in-this-repo.outputs.random-number}}
   job2:
