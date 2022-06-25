@@ -65,7 +65,8 @@ runs:
     - run: echo $FOOFOO
       shell: bash
     - run: |
-        inputs=${{ toJSON(inputs) }}
+        inputs=${{ inputs }}
+        echo $inputs
         result=( $(echo $inputs | jq -r . | keys[]) )
         echo result
       shell: bash
