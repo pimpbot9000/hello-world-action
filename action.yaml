@@ -65,5 +65,5 @@ runs:
     - run: echo $FOOFOO
       shell: bash
     - run: |
-        echo '${{ toJSON(inputs) }}'"
+        echo ${{ toJSON(inputs) }}
       shell: bash
