@@ -64,7 +64,7 @@ jobs:
 
       - name: Print outputs
         shell: bash
-        run: echo ${{ steps.docker_meta.outputs.tags }}
+        run: echo "${{ steps.docker_meta.outputs.tags }}"
 
 
       
