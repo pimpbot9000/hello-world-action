@@ -4,6 +4,7 @@ on:
   push:
     branches: [ main ]
   workflow_dispatch:
+  
 env:
   MY_ENV: Monday
   SOMETHING: something somethang
@@ -65,6 +66,3 @@ jobs:
       - name: Print outputs
         shell: bash
         run: echo "${{ steps.docker_meta.outputs.tags }}"
-
-
-      
