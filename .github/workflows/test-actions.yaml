@@ -8,7 +8,7 @@ on:
 env:
   MY_ENV: Monday
   SOMETHING: something somethang
-  ENVI: tuesday
+
 jobs:
   job1:    
     runs-on: ubuntu-latest
