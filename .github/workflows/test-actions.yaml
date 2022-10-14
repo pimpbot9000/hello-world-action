@@ -49,6 +49,10 @@ jobs:
         env:
           TTT: tuomas
         run: echo ${{ env.TTT }}
+      - name: Test if
+        if: ${{ env.MY_ENV}} == "monday"
+        run: |
+          echo day is ${{ env.MY_ENV }}
 
 
       
