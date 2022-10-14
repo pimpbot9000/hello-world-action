@@ -4,6 +4,7 @@ on:
   push:
     branches: [ main ]
   workflow_dispatch:
+  
 env:
   MY_ENV: Monday
   SOMETHING: something somethang
@@ -49,10 +50,25 @@ jobs:
         env:
           TTT: tuomas
         run: echo ${{ env.TTT }}
+
       - name: Test if
         if: ${{ env.MY_ENV}} == "monday"
         run: |
-          echo day is ${{ env.MY_ENV }}
+          echo day is monday
 
+      - name: Define image meta      
+        id: docker_meta
+        uses: docker/metadata-action@v4
+        with:
+          images: something/something/something
+          tags: |
+            type=semver,pattern={{version}}
+            type=raw,value=sha-${{ github.sha }}
+            type=raw,value=${{ github.sha }}-${{ github.sha }}-${{ github.sha }}-${{ github.sha }}-${{ github.sha }}-${{ github.sha }}-${{ github.sha }}
+          labels: |
+            org.opencontainers.image.authors=SoSe/Viihde
+            org.opencontainers.image.vendor=Elisa
 
-      
+      - name: Print outputs
+        shell: bash
+        run: echo "${{ steps.docker_meta.outputs.tags }}"
