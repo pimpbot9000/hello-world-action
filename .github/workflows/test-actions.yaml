@@ -52,7 +52,7 @@ jobs:
         run: echo ${{ env.TTT }}
 
       - name: Test if
-        if: $MY_ENV == "monday"
+        if: ${{ env.MY_ENV }} == "tuesday"
         run: |
           echo day is monday
 
